@@ -22,4 +22,5 @@ class GetGithubRandomUseCase(private val githubRandomRepository: GithubRandomRep
         }
     }
 
+
 }
