@@ -13,4 +13,16 @@ class GithubRandomRepositoryImpl @Inject constructor(
     override suspend fun getRandom(results: Int): List<GithubRandom> {
         return githubRandomRemoteSource.getRandom(results).results
     }
+
+    override suspend fun getContent(results: Int): List<GithubRandom> {
+        return githubRandomRemoteSource.getRandom(results).results
+    }
+
+    override suspend fun getReplyList(results: Int): List<GithubRandom> {
+        return githubRandomRemoteSource.getRandom(results).results
+    }
+
+    override suspend fun getLikeStatus(results: Int): List<GithubRandom> {
+        return githubRandomRemoteSource.getRandom(results).results
+    }
 }
