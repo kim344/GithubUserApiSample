@@ -25,7 +25,6 @@ class MainActivity: BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.ac
     override fun initDataBinding() {
         with(viewModel) {
             githubRandomUsers.observe(this@MainActivity) {
-                Log.e("동주","여기 들어와?? $it")
                 (binding.rvUsers.adapter as MainAdapter).setItemList(it)
             }
         }
@@ -34,14 +33,6 @@ class MainActivity: BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.ac
     override fun initAfterBinding() {
         binding.btnRefresh.setOnClickListener {
             viewModel.getGithubRandomUsers(10)
-//            activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-//                if (it.resultCode == RESULT_OK) {
-//                    val result = it.data
-//                }
-//            }
-//
-//            val intent = Intent(this, MainActivity::class.java)
-//            activityResultLauncher.launch(intent)
         }
 
         binding.btnContent.setOnClickListener {
