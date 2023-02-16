@@ -49,11 +49,11 @@ class MainActivity: BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.ac
         }
 
         binding.btnLike.setOnClickListener {
-            viewModel.getContent(5)
+            viewModel.getLike(5)
         }
 
         binding.btnReply.setOnClickListener {
-            viewModel.getContent(30)
+            viewModel.getReply(30)
         }
     }
 
